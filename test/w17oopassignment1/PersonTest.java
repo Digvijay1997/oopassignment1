@@ -1,3 +1,5 @@
+package w17oopassignment1;
+
 import java.time.LocalDate;
 import java.time.Month;
 import org.junit.After;
@@ -6,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import w17oopassignment1.Person;
 
 /**
  *
