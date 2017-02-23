@@ -13,23 +13,23 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Person {
-    String first_name;
-    String last_name;
-    String street_address;
+    String firstName;
+    String lastName;
+    String streetAddress;
     String city;
     String province;
-    String postal_code;
+    String postalCode;
     LocalDate birthdate;
     String regex = "^[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]$";
     Pattern pattern = Pattern.compile(regex);
 
-    public Person(String first_name, String last_name, String street_address, String city, String province, String postal_code, LocalDate birthdate) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.street_address = street_address;
+    public Person(String firstName, String lastName, String streetAddress, String city, String province, String postalCode, LocalDate birthdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.streetAddress = streetAddress;
         this.city = city;
         this.province = province;
-        isValidPostalCode(postal_code);
+        setPostalCode(postalCode);
         this.birthdate = birthdate;
     }
 
@@ -56,16 +56,8 @@ public class Person {
 
     }
 
-    public void setPostalcode(String postal_code) {
-        isValidPostalCode(postal_code);
-    }
-
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    private void isValidPostalCode(String postal_code) {
-        Matcher matcher = pattern.matcher(postal_code);
+    public void setPostalCode(String postal_code) {
+         Matcher matcher = pattern.matcher(postal_code);
         if (postal_code.length() == 6) {
             if(matcher.matches()) {
                 this.postal_code = postal_code;
@@ -76,6 +68,12 @@ public class Person {
             throw new IllegalArgumentException("Invalid postal code,length must be 6");
         }
     }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+  
 	
 	 public String getFirstName()
 	 {
