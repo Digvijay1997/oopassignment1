@@ -111,4 +111,9 @@ public LocalDate getBirthdate() {
         return birthdate;
     }
     
-}
+public String getFullAddress()
+    {
+        String fullAddress = getStreetAddress() + ", " + getCity() + ", " + getProvince() + ", " + getPostalCode();
+                
+        return fullAddress;
+    }
